@@ -2,6 +2,6 @@
 
 **Anggota :**
 
-|Nama|NRP|
-|Nathanael Oliver|5025241109|
-|Mario Napitupulu|5025241085|
+| Nama | NRP | Kelas |
+| Nathanael Oliver Amadhika Yuswana | 5025241109 | B |
+| Mario Napitupulu | 5025241085 | B |
