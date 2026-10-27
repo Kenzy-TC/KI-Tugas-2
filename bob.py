@@ -32,8 +32,8 @@ class BobHandler(PeerHandler):
 
         n2 = secrets.token_hex(16)
         challenge = encrypt_ascii(session_key, _payload({"N2": n2}), "BOB_CHALLENGE")
-        print("[Bob] Langkah 3: ticket diterima dan dibuka dengan kunci jangka panjang Bob.")
-        _print_cipher("[Bob] Langkah 4 ke Alice", challenge)
+        print("[Bob]: ticket diterima dan dibuka dengan kunci jangka panjang Bob.")
+        _print_cipher("[Bob]", challenge)
         _send_message(self.wfile, {"type": "CHALLENGE", "envelope": challenge})
 
         proof_message = _read_message(self.rfile)
@@ -44,7 +44,7 @@ class BobHandler(PeerHandler):
         if proof.get("f(N2)") != _f_nonce(n2):
             raise ValueError("Bukti f(N2) dari Alice salah.")
         state.set_session_key(session_key)
-        print("[Bob] Langkah 5 terverifikasi; kunci sesi aktif.")
+        print("[Bob] : kunci sesi aktif.")
         _send_message(self.wfile, {"type": "HANDSHAKE_OK"})
 
 
